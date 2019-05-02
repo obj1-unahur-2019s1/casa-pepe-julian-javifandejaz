@@ -4,7 +4,6 @@ object casaDePepeYJulian {
 	const cosas = []
 	var electros = #{}
 
-	
 	method comprar(cosa){
 		cosas.add(cosa)
 		if( cosa.esElectrodomestico()) { electros.add(cosa)}
@@ -40,7 +39,10 @@ object casaDePepeYJulian {
 	
 	
 	method queFaltaComprar(lista){
-		
-		
+		return lista.asSet().difference(cosas.asSet())
+	}
+	
+	method faltaComida(){
+		return cosas.count({i=>i.esComida()}) < 2	
 	}
 }
